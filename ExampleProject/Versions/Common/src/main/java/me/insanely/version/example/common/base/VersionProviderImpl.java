@@ -1,4 +1,4 @@
-package me.insanely.version.api;
+package me.insanely.version.example.common.base;
 
 import lombok.Getter;
 import org.jetbrains.annotations.NotNull;

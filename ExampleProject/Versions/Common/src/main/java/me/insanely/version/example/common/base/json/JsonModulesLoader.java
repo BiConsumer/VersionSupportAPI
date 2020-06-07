@@ -1,8 +1,8 @@
-package me.insanely.version.api.json;
+package me.insanely.version.example.common.base.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import me.insanely.version.api.MinecraftVersion;
-import me.insanely.version.api.VersionProviderRegistry;
+import me.insanely.version.example.common.base.MinecraftVersion;
+import me.insanely.version.example.common.base.VersionProviderRegistry;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
