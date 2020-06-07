@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 
 public class ExamplePlugin extends JavaPlugin implements Listener {
 
@@ -29,8 +30,8 @@ public class ExamplePlugin extends JavaPlugin implements Listener {
         InputStream modulesJsonStream = getClass().getClassLoader().getResourceAsStream("modules.json");
         try {
             jsonModulesLoader.load(versionProviderRegistry, currentVersion, new ObjectMapper(), modulesJsonStream);
-        } catch (IOException | IllegalAccessException | InstantiationException | ClassNotFoundException e) {
-            e.printStackTrace();
+        } catch (IOException | IllegalAccessException | InstantiationException | ClassNotFoundException | NoSuchMethodException | InvocationTargetException exception) {
+            exception.printStackTrace();
         }
 
         this.actionBarMessager = versionProviderRegistry.getVersionProvider(ActionBarMessager.class).getImplementation(currentVersion);

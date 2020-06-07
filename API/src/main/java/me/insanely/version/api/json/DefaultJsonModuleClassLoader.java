@@ -7,7 +7,7 @@ public class DefaultJsonModuleClassLoader implements JsonModuleClassLoader {
 
     @Override
     public @NotNull VersionModule loadFromClass(@NotNull Class<?> clazz) throws IllegalArgumentException, IllegalAccessException, InstantiationException {
-        if (clazz.isAssignableFrom(VersionModule.class)) {
+        if (!VersionModule.class.isAssignableFrom(clazz)) {
             throw new IllegalArgumentException(clazz.getName() + " is not a module");
         }
         return (VersionModule) clazz.newInstance();
