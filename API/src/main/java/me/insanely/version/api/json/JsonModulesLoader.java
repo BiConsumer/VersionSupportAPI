@@ -14,6 +14,8 @@ public interface JsonModulesLoader {
     void load(@NotNull VersionProviderRegistry registry, @NotNull MinecraftVersion version, @NotNull ObjectMapper objectMapper, @NotNull InputStream jsonInputStream)
             throws IllegalArgumentException, IOException, IllegalAccessException, InstantiationException, ClassNotFoundException, NoSuchMethodException, InvocationTargetException;
 
+    void registerModuleClassLoader(@NotNull JsonModuleClassLoader classLoader);
+
     @NotNull static JsonModulesLoader createJsonModulesLoader() {
         return new JsonModulesLoaderImpl();
     }
